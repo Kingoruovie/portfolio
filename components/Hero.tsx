@@ -21,9 +21,9 @@ export default function Hero() {
           Enthusiast,
         </p>
         <p>
-          With
+          With a
           <span className="inline-block mx-2 relative before:absolute before:-inset-1 before:block before:skew-y-3 before:bg-cyan-400">
-            <span className="relative text-black">Hacking</span>
+            <span className="relative text-black">Hacker&apos;s</span>
           </span>
           Mindset.
         </p>
@@ -31,12 +31,21 @@ export default function Hero() {
       <p className="text-xl mt-16 md:mt-30 mb-3">
         I build, I learn, I solve. One elegant solution at a time. ⚡
       </p>
-      <a
-        href="mailto:oruovie@gmail.com"
-        className="inline-block bg-primary/50 px-3 py-2 border border-foreground/10 rounded-sm font-bold"
-      >
-        Let’s connect like WebSockets
-      </a>
+      <div className="flex flex-col gap-4 sm:flex-row">
+        <a
+          href="mailto:oruovie@gmail.com"
+          className="inline-block bg-primary/50 px-3 py-2 border border-foreground/10 rounded-sm font-bold max-w-[280px]"
+        >
+          Let’s connect like WebSockets
+        </a>
+        <a
+          href="/new_cv.pdf"
+          download="kingoruovie.pdf"
+          className="inline-block bg-cyan-400/50 px-3 py-2 border border-foreground/10 rounded-sm font-bold max-w-[280px]"
+        >
+          Or...Check Out My RESUME 📄
+        </a>
+      </div>
     </section>
   );
 }

@@ -8,8 +8,8 @@ export default function Header() {
           <div className="size-4 bg-primary rounded-full"></div>
         </div>
       </div>
-      <h1 className="uppercase text-2xl mb-4 font-mono tracking-widest md:hidden">
-        Oru Ovie
+      <h1 className="uppercase text-2xl mb-4 font-mono tracking-widest md:hidden font-bold">
+        0ru 0v13
       </h1>
     </header>
   );
