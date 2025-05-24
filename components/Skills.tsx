@@ -3,9 +3,9 @@ export default function Skills() {
     <section className="mt-16">
       <h2 className="font-mono text-2xl font-bold">🧠 Stack & Strategy</h2>
       <p className="italic">
-        I don't just code — I solve. Here's the tech I use to move from abstract
-        ideas to scalable, real-world solutions. Think clean logic, solid
-        architecture, and a touch of mathematical magic.
+        I don&apos;t just code — I solve. Here&apos;s the tech I use to move
+        from abstract ideas to scalable, real-world solutions. Think clean
+        logic, solid architecture, and a touch of mathematical magic.
       </p>
       <div className="mt-3 flex flex-col space-y-4">
         <div>
