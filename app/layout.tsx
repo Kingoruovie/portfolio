@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import Aside from "@/components/Aside";
+import Footer from "@/components/Footer";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -25,9 +28,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
-        {children}
+        <div className="mt-8 mb-16 max-w-4xl mx-4 md:mx-auto md:flex md:justify-between md:mt-24 md:px-10 lg:mt-30">
+          <Aside />
+
+          <main className="mt-7 md:mt-0 w-full ">
+            <h1 className="hidden uppercase text-2xl mb-4 font-mono tracking-widest md:block font-bold md:mb-20">
+              Oru Ovie
+            </h1>
+            {children}
+            <Footer />
+          </main>
+        </div>
       </body>
     </html>
   );
