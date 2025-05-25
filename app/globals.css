@@ -20,4 +20,8 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background-image:
+    linear-gradient(to right, #3ecf8e10 1px, transparent 1px),
+    linear-gradient(to bottom, #3ecf8e10 1px, transparent 1px);
+  background-size: 100px 100px;
 }

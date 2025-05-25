@@ -9,7 +9,7 @@ import Header from "./Header";
 const links = [
   { name: "home", href: "/" },
   { name: "about", href: "/about" },
-  { name: "projects", href: "/projects" },
+  { name: "builds", href: "/builds" },
   { name: "logs", href: "/logs" },
 ];
 
