@@ -39,7 +39,7 @@ export default function Hero() {
           Let’s connect like WebSockets
         </a>
         <a
-          href="/new_cv.pdf"
+          href="/oruovie.pdf"
           download="kingoruovie.pdf"
           className="inline-block bg-cyan-400/50 px-3 py-2 border border-foreground/10 rounded-sm font-bold max-w-[280px]"
         >

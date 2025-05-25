@@ -45,7 +45,7 @@ export default function Experience() {
               <ul className="list-disc ml-6 mt-1 text-sm">
                 <li>📦 Extracted 1000s of leads daily</li>
                 <li>🧼 Cleaned and structured complex HTML tables</li>
-                <li>📤 Exported into CSV & synced to Airtable</li>
+                <li>📤 Exported into CSV and other file formats</li>
               </ul>
             </div>
           </div>

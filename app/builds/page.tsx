@@ -1,5 +1,6 @@
 import Project from "@/components/Project";
-import { FaHtml5, FaCss3Alt, FaJs, FaReact} from "react-icons/fa6";
+import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa6";
+import { SiPython, SiSelenium } from "react-icons/si";
 
 const styleCLass = "fill-foreground/50 size-12";
 
@@ -15,7 +16,17 @@ const projectsInfo = [
       <FaReact key="3" className={styleCLass} />,
     ],
     repo: "https://github.com/Kingoruovie/PROJECTS/tree/main/FRONTEND",
-    live: "https://www.frontendmentor.io/profile/Kingoruovie"
+    live: "https://www.frontendmentor.io/profile/Kingoruovie",
+  },
+  {
+    title: "DataSnatchers",
+    description: `Automated the web so you don’t have to.\n
+From deep product crawls to targeted data harvests, these scrapers are built to sneak past blockers, structure chaos, and feed APIs or dashboards with clean, usable data—fast, headless, and quietly efficient.`,
+    icons: [
+      <SiPython key="1" className={styleCLass} />,
+      <SiSelenium key="2" className={styleCLass} />,
+    ],
+    repo: "https://github.com/Kingoruovie/PROJECTS/tree/main/WEBSCRAPERS",
   },
 ];
 
@@ -28,7 +39,7 @@ export default function Page() {
         because ideas deserve to run wild and ship fast.
       </p>
 
-      <div className="mt-10 flex flex-row">
+      <div className="mt-10 flex flex-col gap-8">
         {projectsInfo.map((projectInfo, index) => {
           return (
             <Project
