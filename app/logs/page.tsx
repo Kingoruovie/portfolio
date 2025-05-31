@@ -1,4 +1,22 @@
+import Link from "next/link";
+import { getAllPosts, logTag } from "@/app/logs/utils";
+
+export const metadata = {
+  title: "Logs",
+  description: `Logs is my LIFE/DEVELOPER journal — part changelog, part brain dump, part thought experiment.
+        Whether I’m debugging a tricky bug 🐞, reflecting on a math insight 🧮,
+        or documenting a lesson from life or code — it gets logged here.`,
+};
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
 export default function Page() {
+  const posts = getAllPosts();
   return (
     <div>
       <p className="italic">
@@ -144,6 +162,48 @@ export default function Page() {
             moments. But spoiler: we reboot stronger.
           </span>
         </p>
+      </div>
+      <div className="mx-auto py-12">
+        <div className="flex flex-col gap-3">
+          {posts.map(({ slug, frontmatter }) => (
+            <div key={slug} className="">
+              <Link
+                href={`/logs/${slug}`}
+                className="flex flex-col sm:flex-row sm:items-center gap-3 border-b border-primary/70 pb-2 relative group"
+              >
+                <p className="text-sm text-gray-500 hidden sm:block">
+                  {new Date(frontmatter.date).toDateString()}
+                </p>
+                <h2 className="text-xl block md:hidden font-semibold font-mono grow">
+                  {frontmatter.title.length > 35
+                    ? `${frontmatter.title.slice(0, 35)}...`
+                    : frontmatter.title}
+                </h2>
+
+                <h2 className="text-xl hidden md:block font-semibold font-mono grow">
+                  {frontmatter.title.length > 22
+                    ? `${frontmatter.title.slice(0, 22)}...`
+                    : frontmatter.title}
+                </h2>
+                <div className="flex flex-row items-center gap-5">
+                  <p className="text-sm text-gray-500 sm:hidden">
+                    {new Date(frontmatter.date).toDateString()}
+                  </p>
+                  <p className="ml-auto grow-1">
+                    <span className={logTag[frontmatter.tag]}>
+                      {frontmatter.tag}
+                    </span>
+                  </p>
+                </div>
+
+                <div className="absolute bottom-10 left-0 bg-secondary text-base p-2 transition delay-200 duration-200 invisible group-hover:visible opacity-0 group-hover:opacity-100">
+                  <span className="block font-semibold font-mono">{frontmatter.title}</span>
+                  <span>{frontmatter.description}</span>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

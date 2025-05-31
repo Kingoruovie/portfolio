@@ -2,6 +2,11 @@ import Project from "@/components/Project";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa6";
 import { SiPython, SiSelenium } from "react-icons/si";
 
+export const metadata = {
+  title: 'Projects',
+  description: 'Check out all my hacks and experiments 🔬🔬🔬🤔🤔🤔.',
+}
+
 const styleCLass = "fill-foreground/50 size-12";
 
 const projectsInfo = [
