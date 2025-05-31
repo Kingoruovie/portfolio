@@ -189,7 +189,7 @@ export default async function BlogPost({
                 <SyntaxHighlighter
                   {...(rest as ComponentProps<typeof SyntaxHighlighter>)}
                   PreTag="div"
-                  children={String(children).replace(/\n$/, "")}
+                  // children={String(children).replace(/\n$/, "")}
                   language={match[1]}
                   style={vscDarkPlus}
                   showLineNumbers={true}
