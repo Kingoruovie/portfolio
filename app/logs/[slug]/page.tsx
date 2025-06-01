@@ -189,7 +189,6 @@ export default async function BlogPost({
                 <SyntaxHighlighter
                   {...(rest as ComponentProps<typeof SyntaxHighlighter>)}
                   PreTag="div"
-                  // children={String(children).replace(/\n$/, "")}
                   language={match[1]}
                   style={vscDarkPlus}
                   showLineNumbers={true}
@@ -201,7 +200,9 @@ export default async function BlogPost({
                       whiteSpace: "pre-wrap",
                     } as CSSProperties,
                   }}
-                />
+                >
+                  {String(children).replace(/\n$/, "")}
+               </SyntaxHighlighter> 
               ) : (
                 <code {...rest} className={className}>
                   {children}

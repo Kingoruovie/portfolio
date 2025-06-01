@@ -6,6 +6,8 @@ socialImage: /images/learning-algorithm-to-live-by.jpg
 tag: TRACE
 ---
 
+![Learning By Algorithms](/images/learning-algorithm-to-live-by.jpg)
+
 **Algorithms—a finite sequence of steps that transform input into output**.
 In many ways, they’re like mathematical functions. But unlike pure functions, 
 algorithms often have multiple paths to the same end—and some paths are far 

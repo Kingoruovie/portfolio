@@ -2,24 +2,17 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-type frontmatter = {
-  title: string;
-  date: Date;
-  description: string;
-  socialImage: string;
-  tag: string
-}
 
-interface logInterface {
+interface LogInterface {
   slug: string;
-  frontmatter: frontmatter,
+  frontmatter: {[key: string]: any},
   content: string
 }
 
 const logsDirectory = path.join(process.cwd(), "logs");
 
 // Get all blog posts
-export function getAllPosts(): logInterface {
+export function getAllPosts(): LogInterface[] {
   const files = fs.readdirSync(logsDirectory);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
 
@@ -41,7 +34,7 @@ export function getAllPosts(): logInterface {
 }
 
 // Get single post by slug
-export function getPostBySlug(slug: string) {
+export function getPostBySlug(slug: string): LogInterface {
   const filePath = path.join(logsDirectory, `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, "utf8");
   const { data: frontmatter, content } = matter(fileContents);
@@ -53,7 +46,7 @@ export function getPostBySlug(slug: string) {
   };
 }
 
-export const logTag = {
+export const logTag: {[key: string]: string} = {
   INFO: "bg-blue-500 p-1 rounded-sm text-[12px] font-bold min-w-[50px] text-center",
   DEBUG: "bg-indigo-500 p-1 rounded-sm text-[12px] font-bold min-w-[50px] text-center",
   WARN: "bg-yellow-500 p-1 rounded-sm text-[12px] font-bold min-w-[50px] text-center",
