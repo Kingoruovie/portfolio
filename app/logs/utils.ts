@@ -30,7 +30,7 @@ export function getAllPosts(): LogInterface[] {
 
   // Sort posts by date (newest first)
   return posts.sort(
-    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date),
+    (a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime(),
   );
 }
 
